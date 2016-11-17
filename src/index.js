@@ -5,6 +5,7 @@ import YTSearch from 'youtube-api-search';
 const API_KEY = 'AIzaSyADduhTyVL5DNdVxzjrt-ydSTbbvmEKxZ8';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetail';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSearchTermChange={videoSearch} />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           videos={this.state.videos}  />
